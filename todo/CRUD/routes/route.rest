@@ -1,0 +1,6 @@
+PATCH    http://localhost:3000/users/61447195203fa57ea4a278a0
+Content-Type: application/json
+
+{
+    "userName": "Ali"
+}

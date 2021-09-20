@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO</title>
+</head>
+
+<body>
+    <h1>TODO LIST:</h1>
+    <div>
+        <form action="" method="POST">
+            <div>
+                <label for="name">Enter Todo</label>
+                <input type="text" name="todo[task]" id="name" placeholder="Enter Todo">
+            </div>
+            <button>Submit</button>
+        </form>
+    </div>
+    <div>
+        <ul>
+            <% for( let todo of todos ) { %>
+                <li>
+                    <%= todo.task %>
+                        <form action="/todo/<%= todo._id %>?_method=DELETE" method="POST" style="display:inline-block">
+                            <button>Delete</button>
+                        </form>
+                        <button><a href="/todo/<%= todo._id %>/edit">Edit</a></button>
+                </li>
+                <% } %>
+        </ul>
+    </div>
+</body>
+
+</html>
